@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CD5AA3A8-DF2E-4D6C-BE64-1B8723433B39}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Dados</RootNamespace>
-    <AssemblyName>Dados</AssemblyName>
+    <ProjectGuid>{D8B0C745-21FF-4070-A577-0845F40E1178}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ConsoleApp</RootNamespace>
+    <AssemblyName>ConsoleApp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,34 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Caixa.cs" />
-    <Compile Include="CaixaRepository.cs" />
-    <Compile Include="Categoria.cs" />
-    <Compile Include="CategoriaRepository.cs" />
-    <Compile Include="Cliente.cs" />
-    <Compile Include="ClienteRepository.cs" />
-    <Compile Include="Compra.cs" />
-    <Compile Include="CompraRepository.cs" />
-    <Compile Include="Conta.cs" />
-    <Compile Include="ContaPagar.cs" />
-    <Compile Include="ContaPagarRepository.cs" />
-    <Compile Include="ContaReceber.cs" />
-    <Compile Include="ContaReceberRepository.cs" />
-    <Compile Include="ContaRepository.cs" />
-    <Compile Include="ControleCaixa.cs" />
-    <Compile Include="ControleCaixaRepository.cs" />
-    <Compile Include="Fornecedor.cs" />
-    <Compile Include="ItemCompra.cs" />
-    <Compile Include="ItemCompraRepository.cs" />
-    <Compile Include="ItemVenda.cs" />
-    <Compile Include="ItemVendaRepository.cs" />
-    <Compile Include="ProdutoRepository.cs" />
-    <Compile Include="FornecedorRepository.cs" />
-    <Compile Include="Produto.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tipos.cs" />
-    <Compile Include="Venda.cs" />
-    <Compile Include="VendaRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dados\Dados.csproj">
+      <Project>{cd5aa3a8-df2e-4d6c-be64-1b8723433b39}</Project>
+      <Name>Dados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{6b9b13e2-ced4-4b45-85a9-75a9a94c128f}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

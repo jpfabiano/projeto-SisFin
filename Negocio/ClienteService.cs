@@ -16,7 +16,7 @@ namespace Negocio
             _repository = new ClienteRepository();
         }
 
-        public void CadastrarCliente(int id, TipoPessoa tipoPessoa, string nome, string email)
+        public Cliente CadastrarCliente(int id, TipoPessoa tipoCliente, string nome, string cpf_cnpj)
         {
             // Insira as validações e regras de negócio aqui
             // Por exemplo, verificar se o email já está cadastrado
@@ -24,13 +24,13 @@ namespace Negocio
             var cliente = new Cliente
             {
                 Id = id,
-                tipoPessoa = tipoPessoa,
+                TipoCliente = tipoCliente,
                 Nome = nome,
-                Email = email
+                Cpf_cnpj = cpf_cnpj
             };
 
             _repository.Adicionar(cliente);
-
+            return cliente;
         }
 
         public IEnumerable<Cliente> ObterTodos()
